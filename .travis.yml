@@ -8,4 +8,5 @@ script:
 - if [ "$TRAVIS_BRANCH" == "master" ]; then bash ./deploy.sh; fi
 env:
   global:
-  - GH_REF: github.com:doctor-g/tr2.git 
+  - GH_REF: github.com:doctor-g/tr2.git
+  - secure: dXkmTi2Id2Yx+261CyzV3xBv0yYHVqJCjIDxgyKClH8qnmoGc0ZhjmIuOO/NwLJUXyRFkr8mZ2ge8Y6IkVnQcIQpJTywfvjXCCUf6/UgJKSWPYMzVMMgSEdNgWLhE/fsn9NFA0bfwy1EyuRSWjqA+1+csIhwdtWPlDGJFgLUO1KLIa7p8qG6mFF2+rcxdbwC7Ujg4IRvKEV/Z7022RDkwoABwlX2dZpxOCDgmNCV9vPtqFe+osqFHqG4b36vKqvH/F9rdPU1FwNzIG4kimiFUgCfTX1OOIUTlmimwTpuhIWVvWlrSehxIb2l8NFP7HE+B+j+xpd9AQCcZl0y4ONPOz/G511FU1LnoL6zVfFRCQ4VT8+dhaAXmyg/VQeB8KWSpByixretGuAERDIz88Oahj3lj4SFqhjZfCIcuMd4xaGnh6lQrX0tl+QECie3n2dR8d+QiODljpyZPspfr/zp+d5EWjjYekWFzxl8GbL8znszMN3kUIfzStMTwAsi6IAMP0GOZVJefLMHKsGHuJC+oGI9D2LTfhOZiJMG8e8PxLZ5lDWxAfgg5HVtW5XuSvIQ43jU57hLIIN/K94zW+fNVlVcNsQKwv4ZJ/YsIiEglC/mGA7/0iNM5HY4saEHWHxgUh906XbWF5/sGkD2vevODQaKGA6qNiNuGoMA5IFlNn4=
