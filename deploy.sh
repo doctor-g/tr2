@@ -5,7 +5,7 @@ set -e
 
 mkdir out
 cd out
-cp ../paper.pdf .
+cp ../tr2.pdf .
 git init
 git config user.name "Travis-CI"
 git config user.email "travis@travis-ci.org"
