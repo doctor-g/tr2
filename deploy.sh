@@ -2,6 +2,7 @@
 
 # Exit with nonzero status if anything fails
 set -e
+set -x
 
 mkdir out
 cd out

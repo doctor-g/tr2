@@ -2,11 +2,11 @@ before_install:
 - sudo apt-get update && sudo apt-get install texlive-latex-base
 script:
 - pdflatex tr2.tex
-- bibtex paper
+- bibtex tr2
 - pdflatex tr2.tex
 - pdflatex tr2.tex
 - if [ "$TRAVIS_BRANCH" == "master" ]; then bash ./deploy.sh; fi
 env:
   global:
-  - GH_REF: github.com:doctor-g/tr2.git
-  - secure: dXkmTi2Id2Yx+261CyzV3xBv0yYHVqJCjIDxgyKClH8qnmoGc0ZhjmIuOO/NwLJUXyRFkr8mZ2ge8Y6IkVnQcIQpJTywfvjXCCUf6/UgJKSWPYMzVMMgSEdNgWLhE/fsn9NFA0bfwy1EyuRSWjqA+1+csIhwdtWPlDGJFgLUO1KLIa7p8qG6mFF2+rcxdbwC7Ujg4IRvKEV/Z7022RDkwoABwlX2dZpxOCDgmNCV9vPtqFe+osqFHqG4b36vKqvH/F9rdPU1FwNzIG4kimiFUgCfTX1OOIUTlmimwTpuhIWVvWlrSehxIb2l8NFP7HE+B+j+xpd9AQCcZl0y4ONPOz/G511FU1LnoL6zVfFRCQ4VT8+dhaAXmyg/VQeB8KWSpByixretGuAERDIz88Oahj3lj4SFqhjZfCIcuMd4xaGnh6lQrX0tl+QECie3n2dR8d+QiODljpyZPspfr/zp+d5EWjjYekWFzxl8GbL8znszMN3kUIfzStMTwAsi6IAMP0GOZVJefLMHKsGHuJC+oGI9D2LTfhOZiJMG8e8PxLZ5lDWxAfgg5HVtW5XuSvIQ43jU57hLIIN/K94zW+fNVlVcNsQKwv4ZJ/YsIiEglC/mGA7/0iNM5HY4saEHWHxgUh906XbWF5/sGkD2vevODQaKGA6qNiNuGoMA5IFlNn4=
+  - GH_REF: github.com/doctor-g/tr2.git
+  - secure: "Jlhs0tdTfv7CTbSPgUMpsi+FscYVfwg7pPtIkkoWfMfcp+VgUGx+vTO7Yzjed1TdcHWDiFRcrAXRiZYKkxVhMxZLG6Upbm6lu1kCEsHAwDs591OqZZo+m3aLddc68WbTjSS130Gqkyu8+BSc/sNYqcWwzWsIMHIWUk+1N6od5ByGyKILZjUquxvJjptkW3Ok3XWnYvOK5ZvrhCOD+LJBkTwL2uQPeDd/7+xU+FYXrr3YXKhpb+IrzIwi8Pa+p/GpG3Cm+N6abc+G2QyHSdblVWbKEJjkDrRWfDtHEkxSzQre2wtBTDc/zGPZNhely5ySV3zc9XnjB3QMoT/qo9pEW7FH8E2oFQSddWsMDWyDPb3ScyOAu/6l/MYD6d15NtC7TVBtgZ/xYVM1sIKSWiAAb1+1Of6tsIz6tP2rYOMTUp+ebtl8OwIE0Aoudj9g4ppF5iSAxA2/jTxAo2na5tBCGAesK1v6Q3sfzTFvrWB/5Yo8lGXpW/rvqRQ1piiCeWF9brrRlHuNnUt+/NgNZHZ5DeySqs3FZ0KaJxjeNzAkp/4u9MY64yxn4zF6Zp/MMHutJOyVm0OWyjhDq78GGQUXrWC1Lw8/9T9j7+8AKfX/gnac33JJWPpuejoMjCNGlTJ32NuhzbUipbWmx7xavarrv8kiHsSX2v9tXUCHnjaY64Y="
