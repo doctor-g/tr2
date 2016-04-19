@@ -1,5 +1,5 @@
 before_install:
-- sudo apt-get update && sudo apt-get install texlive-latex-base
+- sudo apt-get update && sudo apt-get install texlive-latex-base texlive-latex-extra
 script:
 - pdflatex tr2.tex
 - bibtex tr2
