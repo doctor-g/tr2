@@ -477,38 +477,139 @@ identification as well, but we note the possibility.
 \section{Discussion}
 \label{sec:discussion}
 
+\subsection*{About the game}
 
-\textbf{---Everything below here is notes to be brought above into prose---}
+Our findings regarding game vocabulary affirm our design decision
+to avoid the terms ``confidentiality'', ``integrity'', and ``availability''
+in the game. These are undeniably security jargon, not common parlance.
+The subjects in our study were not a random sample of their age group,
+and in fact, we have reason to believe that these were children of
+privilege; we expect that players' confusion over vocabulary
+and cultural references would be exaggerated among players from
+less privileged backgrounds.
 
-\textit{Vocabulary and abstractions in game design: C/I/A, in-game text (press release). Authentic text vs. non-authentic. Role of playtesting.}
+\textit{The Social Startup Game} features high degrees of randomization
+in the spirit of increasing replayability. For example, the sequence
+of story events and the set of characters included in the game are randomized,
+so they will be unpredictable for any given gameplay experience.
+However, we confess that while this improves replayability---generally
+considered a virtue in games of any kind---it also potentially hindered
+our evaluation. Each player was faced with a random set of characters,
+for example, so we cannot directly compare two players' opinions of their
+workers to each other, and we also could not intentionally match
+or mismatch character gender and ethnicity with the player.
+
+A significant category in our analysis included usability problems
+with the game interface.
+The two that dominated the list were players not realizing that they
+could change characters' tasks and that they could
+read character bios. This surprised us during the first few interviews,
+given that all of the players read this introduction given by Frieda,
+Social Jam's administrative coordinator:
+\begin{quote} 
+  [Employee 1], [Employee 2], and [Employee 3] are currently maintaining our
+  software. You can tap them to find out more about them. You may
+  reassign any number of them to new feature development at any
+  time. Go ahead and try that now, and let me know when you are ready!
+\end{quote}
+All of the players read this and then tapped ``Next'' without ever following her
+instructions, except for those whom we interrupted to demonstrate
+how to do these actions.
+This usability problem could likely have been discovered with 
+more playtesting prior to the formal evaluation. However, we do not
+believe that this had any invalidating effect upon our findings,
+since players were quick to understand the interface once we
+demonstrated how to use it. We suspect part of the confusion came from
+the fact that our interface was designed for touch-based mobile devices,
+yet our evaluation was being done on non-touch laptops with mouse
+input.\footnote{The reason for using mouse-driven input was
+ an untimely defect in one of our supporting libraries. 
+PlayN's 2.0-rc3 contains a previously unidentified defect 
+that broke popup menu support on touch-input devices, and hence player role
+selection was impossible on touch-based interfaces. Although PlayN
+2.0 has yet to be released, the snapshot build has fixed this defect,
+and our current version of the game is built upon that snapshot.}
+We observe with mouse-driven input that players scan the screen
+with the pointer, watching for responses that would indicate 
+interactivity, whereas on touch-based devices, players are more
+apt to try tapping things to see what happens.
+
+We used \textit{The Social Startup Game} as part of our workshop 
+at the 2016 Congressional Leadership Academy, which is a full-day event
+for high-achieving high school juniors from Indiana's sixth district.
+The students at this event, who were just barely outside of our
+target demographic, showed none of the confusion over terms
+and jargon; in fact, they seemed to enjoy the game much more than our
+target demographic. 
+Of course, these were high-achieving students who elected
+to attend a session on cybersecurity, so in a sense we were preaching
+to the choir: these students were already on their way to potential
+careers in cybersecurity. 
+
+\subsection*{About education}
+
+The number and confidence of players who chose Computer Science
+as the default academic option for IT careers is problematic.
+While it is true that many students graduate from Computer Science
+programs do pursue such careers, we know that there are many other
+ways to get there. Anecdotally, we have met recruiters who prefer
+liberally-educated, critical-thinking philosophy majors over 
+myopic, code-oriented Computer Science majors.
+If there is any standard of what constitutes Computer Science,
+it is the ACM/IEEE Curriculum Guide~\citep{CS2013}---a sprawling
+guide that speaks to the truth of the insider joke, ``If you ask
+five computer scientists to define `computer science' you get
+seven different answers.''
+We are starting to see new programs being developed, including
+Software Engineering programs and transdisciplinary programs like
+Georgia Tech's computational media major. However, the fact remains
+that to many students, computer science has ``computer'' in the title,
+and it looks to them like the one surefire path toward software
+development careers.
+
+We believe there is reason to be concerned about the perception that
+subjects in school are either ``academic'' or ``not academic.''
+Our study does not reveal from whence these youth developed
+such perspectives, although we can assume that it relates to the
+administrative structure of their school experience.
+The divisions of school are artificial, created by bureaucracy for
+the purpose of perceived efficiency.
+Students who do not recognize this as an artificial construction 
+become, ironically, victims of it rather than liberally educated.
+
+Although this study is aimed at youth, our experiences with
+undergraduate computer science students revealed to us a connection
+between our subjects and our university students: 
+understanding of security principles and practices is negligible, 
+and both pools seem to lack the concepts---the vocabulary---about
+which to converse on these. This echoes the findings of the 
+Cybersecurity Education Workshop~\citep{Cybersecurity2014}.
+We suspect that there is a causal relationship between the
+prevailing structures of Computer Science education and the lack
+of good security practices in industry. The ACM/IEEE curriculum
+guidelines for Computer Science curricula treat cybersecurity differently
+from all other domains, explaining that this topic must be included
+throughout the curriculum and not simply in isolated courses.
+However, conventional higher educational structures privilege the
+separation of content into courses as well as the academic freedom
+of faculty in the classroom. This leads to a situation where there is
+no practical way to create interleaving topics, motivate their adoption,
+or evaluate their efficacy. 
 
 
-\textit{Randomness was not necessary to our goals}
-
-If students separate academic and non-academic learning in a way imposed
-by the state, they ironically 
-become victims of it rather than liberally educated.
-
-
-
-CS AS DEFAULT PATH is really problematic
-
-Not knowing about software security: not so different from CS majors.
-
+\subsection*{About game design}
 
 Two modes of decision-making: what does it mean for game design,
 especially when these characters were all actually the same?
 
-Several students recognized the role of the App Store 
-and major software development companies in the software ecosystem.
-To some, the path to a career in software development is 
-through companies like Adobe or Apple.
-% Impact?
 
 Right/wrong, education, and edugaming.
 
 
 \section{Conclusions and Future Work}
+
+Continued development of tier 3 games to fit this need, justified by
+learner's backgrounds.
 
 \section{Acknowledgments}
 
@@ -761,6 +862,8 @@ Bruce was recently married and enjoys going to the gym and watching documentarie
 \input{logs.tex}
 
 \end{document}
+
+
 
 
 
