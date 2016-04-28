@@ -5,6 +5,7 @@
 \usepackage{fullpage}
 \usepackage{mdwlist}
 \usepackage{graphicx}
+\usepackage{framed}
 
 \newcommand{\serc}{S$^2$ERC}
 
@@ -223,6 +224,114 @@ resource and instead to focus on social media's fungible currency: users.
 
 \subsection{\textit{Social Startup Game}}
 
+\textit{Social Startup Game} is a single-player simulation game
+in which the player is cast as the chief security advisor for
+an up-and-coming social media startup, Social 
+Jam;
+a list of the game's key concepts is provided in
+Appendix~\ref{appendix:key-concepts}.
+The player manages three employees over ten days and is given two 
+competing goals: first, to increase the number of Social Jam users
+to 20,000, and second, to keep the estimated exposure (security risk)
+of the company at less than 15\%.
+The player does this by assigning employees to either the Development
+task or Maintenance task. Development contributes to the completion of
+features, which earn new users but also increase exposure.
+Social Jam is constantly under threat by hackers, and the higher the
+exposure, the higher the chance of an exploit. The Maintenance task
+is necessary for both fixing exploits and reducing exposure.
+
+There are nine
+main characters (listed in Appendix~\ref{appendix:characters}), and at
+the start of the game, one is randomly chosen to be CEO, and three
+more for your three employees.
+Embedded into the simulation game are the eight narrative events
+listed in Figure~\ref{fig:event-list}; these events serve as
+important decision points for contextualizing educational content.
+%
+\begin{figure}
+\begin{framed}
+\begin{description}
+\item[Introduction] Explains the game interface.
+\item[Take-your-child-to-work Day] A coworker asks the player to 
+ recommend a major for his daughter to pursue in college.
+\item[Data stolen] Choose responsible disclosure or secrecy when 
+ data is stolen by hackers.
+\item[DDOS] Respond to an angry ex-user's initiation of a distributed
+ denial-of-service attack.
+\item[Insecure password] When a weak password causes a problem,
+ choose whether to ignore it, fix it, or train the staff to prevent
+ future problems.
+\item[Script kiddie] Faced with amateurish attacks, choose to 
+ ignore it, report it, or fight back.
+\item[Security conference] One employee may be sent to a two-day
+ conference to improve their Maintenance Skill
+\item[Input sanitization] When an employee expresses concern over
+ input sanitization, you can either take action or tell them to ignore it.
+\end{description}
+\caption{Narrative events of \textit{Social Startup Game}}
+\label{fig:event-list}
+\end{framed}
+\end{figure}
+%
+One event is the introduction that explains the game's interface,
+and the sequencing and timing of the other eight
+are randomized at the start of the game. 
+
+At the end of ten in-game days, the player is given feedback from
+the Social Jam CEO about their performance. This feedback varies
+depending on how well the player met the two different goals, the best
+feedback of course being reserved for those who met both.
+
+\subsection{Technical Details}
+
+\textit{Social Startup Game} is a Web-based game based on HTML5 and
+runs without plugins in all modern evergreen browsers. The aspect
+ratio of the game makes it friendly for mobile devices such as smart
+phones and tablets, and the game scales to any screen size.  The game
+is hosted at \url{socialstartupgame.info}; it is open source, and the
+central repository is at
+\url{github.com/doctor-g/social-startup-game}.
+
+The game was written in Java using PlayN~(\url{playn.io}),
+which integrates with GWT~(\url{www.gwtproject.org})
+to compile the Java source code into
+HTML5 and JavaScript. 
+\textit{Social Startup Game} is a Maven project, and other
+libraries directly 
+used by \textit{Social Startup Game} include: 
+\begin{itemize}
+\item TriplePlay (\url{github.com/threerings/tripleplay}), 
+ a library of utilities for PlayN-based games, including 
+ screen and UI management
+\item Mockito (\url{mockito.org}), a mocking framework for unit tests
+\item Google Guava (\url{github.com/google/guava}), a collection
+ of useful libraries for Java
+\item React (\url{github.com/threerings/react}), a library for
+ functional-reactive programming in Java
+\end{itemize}
+
+The game has a hybrid architecture, combining elements of traditional
+object-oriented design, an entity system, and functional-reactive
+programming.
+Most of the simulation is implemented within the entity system,
+which is a style of game engine architecture that offers many benefits over
+standard OO conventions~\citep{Gestwicki2012}. The entity system
+approach divides the software into \textit{entities} that
+aggregate \textit{components}, and \textit{systems} that process 
+specific kinds of components.
+For example, there is an entity that represents a feature, and that
+entity has a user-generating component. The user generation system
+looks at all active entities that have such components and updates
+the Social Jam user count based on this.
+\textit{Social Startup Game}'s entity system comprises 15~systems
+and 25~components, the explanations for which are provided
+in Appendix~\ref{appendix:entity-system}.
+
+All of the programming and design were done by Paul Gestwicki and
+Kaleb Stumbaugh, and all of the artwork was created by Coy Yuan.  The
+music is by Kevin MacLeod (\url{incompetech.com}) and licensed under a
+Creative Commons license (CC-BY-3.0).
 
 
 \section{Evaluation}
@@ -260,6 +369,7 @@ on female participants. The subjects include a mixture of homeschool
 and public school attendees.
 
 \begin{table}
+\begin{framed}
 \centering
 \begin{tabular}{llr}
 \textbf{Subject ID} & \textbf{Gender} & \textbf{Age}\\
@@ -278,6 +388,7 @@ and public school attendees.
 13 & Female & 10\\
 \end{tabular}
 \caption{Research Subjects}
+\end{framed}
 \end{table}
 
 Each session consisted of a semi-structured interview combined with
@@ -309,6 +420,7 @@ Our analysis resulted in four major themes, which are listed
 in Table~\ref{tab:themes}.
 %
 \begin{table}
+\begin{framed}
 \begin{itemize}
 \item Mixed views on education and career goals
 \item Diverse opinions about developers appearance and interests
@@ -317,6 +429,7 @@ in Table~\ref{tab:themes}.
 \end{itemize}
 \caption{Four Major Themes}
 \label{tab:themes}
+\end{framed}
 \end{table}
 %
 Each of the themes identified by our analysis are described in turn below.
@@ -355,6 +468,7 @@ Graphic Design, and one chose Engineering---a surprising consistency
 of choices given that there were nine options (Table~\ref{tab:child-advice}).
 %
 \begin{table}
+\begin{framed}
 \centering
 \begin{tabular}{rlrl}
 \textbf{Option} & \textbf{Times Chosen}\\
@@ -372,6 +486,7 @@ Psychology & 0
  in \textit{Social Startup Game} and the number of times they were
  selected by unique subjects during interviews}
 \label{tab:child-advice}
+\end{framed}
 \end{table}
 %
 Although almost all the students refer to Computer Science as the
@@ -916,6 +1031,150 @@ Honors College.
 
 \clearpage
 \appendix
+
+\clearpage
+\section{\textit{Social Startup Game}: Key Concepts}
+\label{appendix:key-concepts}
+
+\begin{itemize}
+\item \textit{Player}: the person playing this single-player game
+
+\item \textit{Company}: Social Jam, the company employing the player
+ \begin{itemize}
+ \item \textit{Exposure}: the probability of a successful exploit
+ \item \textit{Users}: the number of Social Jam users, which functions as
+                       the player's score
+ \item \textit{Acquisition Rate}: The number of users generated per hour
+ \end{itemize}
+
+\item \textit{Employee}: A non-player who works for Social Jam under 
+                        the player's direction
+ \begin{itemize}
+ \item \textit{Development Skill}: Productivity at development task
+ \item \textit{Maintenance Skill}: Productivity at maintenance task
+ \item \textit{Background}: Educational credentials and interests
+ \end{itemize}
+
+\item \textit{Task}: One of the jobs to which an employee can be assigned
+ \begin{itemize}
+ \item \textit{Development}: Advance completion of features
+ \item \textit{Maintenance}: Lower company exposure and contribute to fixing
+                             of exploits
+ \item \textit{Special}: Special tasks are assigned through decisions in 
+                         narrative events and have a variety of effects
+ \end{itemize}
+
+\item \textit{Exploit}: A named defect that continuously drains a small
+                        percentage of users until it is fixed
+
+\item \textit{Feature}: A user-facing feature offered by Social Jam 
+                        that attracts new users but also increases
+                        exposure
+
+\item \textit{Narrative Event}: An interactive narrative moment
+                         in which the player must make a choice
+
+\end{itemize}
+
+\clearpage
+\section{Characters in \textit{Social Startup Game}}
+\label{appendix:characters}
+
+\newenvironment{character}[3]
+{
+\begin{tabular}{p{1.25in}p{4in}}
+\raisebox{-0.5\height}{\includegraphics[height=2in]{images/#1.png}} &
+\textbf{#1 #2}
+\begin{itemize*}
+#3
+\end{itemize*}
+}
+{
+\end{tabular}
+\bigskip
+}
+
+\begin{character}{Esteban}{Cortez}
+{\item Bachelors in Computer Science, Ball State University}
+Esteban worked in a factory until he was 33, then he went to college and decided to get involved in software development.
+\end{character}
+
+\begin{character}{Nancy}{Stevens}
+{\item Bachelors in English, Georgetown University
+ \item Masters in Computer Security, Purdue University}
+Nancy has a popular podcast about being a woman in technology.
+\end{character}
+
+\begin{character}{Jerry}{Chen}
+{\item Bachelors in Computer Science, University of Hong Kong}
+Jerry interned at a local company in high school and has been working as a software developer ever since.
+\end{character}
+
+\begin{character}{Vani}{Mishra}
+{\item Bachelors in Computer Engineering, Indian Institute of Science
+ \item Masters in Software Engineering, Ball State University}
+Vani was born in India and came to the United States for graduate school. She loves music, dancing, and PHP.
+\end{character}
+
+\begin{character}{Abdullah}{Nasr}
+{\item Bachelors in Electrical Engineering, Iowa State University}
+Abdullah used to work for a larger social media company, but he prefers the excitement of a small startup.
+\end{character}
+
+\begin{character}{Janine}{Palmer}
+{\item Bachelors in Computer Science, Virginia Tech}
+Janine is especially talented at meeting with customers and understanding what they want from a product.
+\end{character}
+
+\begin{character}{Melissa}{Barnard}
+{\item Bachelors in Mathematics, Stanford University}
+Melissa has always loved games and puzzles, but she especially loves bicycling and walking her German Shepherd.
+\end{character}
+
+\begin{character}{Ivar}{Johansen}
+{\item Bachelors in Chemistry, Stockholm University
+ \item Masters in Electrical Engineering, Uppsala University}
+Ivar teaches kids how to build simple robots as a volunteer in a local school.
+\end{character}
+
+\begin{character}{Bruce}{Powers}
+{\item Bachelors in Computer Science, Ball State University}
+Bruce was recently married and enjoys going to the gym and watching documentaries about history.
+\end{character}
+
+\begin{tabular}{p{1.25in}p{4in}}
+\includegraphics[width=0.6in]{images/Frieda.png}
+&
+\textbf{Frieda}
+
+Frieda is the administrative coordinator at Social Jam.
+\end{tabular}
+
+\clearpage
+\section{\textit{Social Startup Game} Entity System}
+\label{appendix:entity-system}
+
+\subsection*{Systems}
+\begin{description}
+\item[EventTriggerSystem]
+ Checks the registered events and triggers and event to occur if its registered time has passed
+\item[ExploitMaintenanceSystem] Produces progress towards ``fixing'' the oldest exploit based on the skill of the employee(s) assigned to the Maintenance task
+\item[ExposureReductionSystem] Reduces the company’s exposure value based on the maintenance skill of the employees assigned to the “maintenance” task
+\item[FeatureDevelopmentSystem] Increases the progress towards completion on current feature based on the “development” skill of the employee(s) assigned to the “development” skill
+\item[FeatureGenerationSystem] Generates a new feature with zero progress when the previous feature is completed
+\item[GameTimeSystem] Moves forward in real time but can be paused and unpaused; used by any other system that relies on time.
+\item[LayerPositionsSystem] Animates sprite layers
+\item[LearningSystem] Increases an employee’s skill over time as they perform a related task
+\item[TaskProgressSystem] Calculates the time remaining on special event tasks assigned to employees
+\item[UpdatingSystem] Updates entities; used as a model level support of updating UI components
+\item[UserAttritionSystem] Removes users per section per exploit equal to the product of the total company users and the exploit attrition value (0.0022)
+\item[UserGenerationSystem] Generates users per second equal to the sum of the user generation values of the completed features
+\item[WorkHoursSystem] Limits the work hours of employees to the common work day; accelerates time to twice as fast when not during normal work hours
+\end{description}
+
+
+
+\clearpage
 \section{Semi-structured interview protocol}
 \label{appendix:interview-protocol}
 
@@ -1087,79 +1346,6 @@ security: strong passwords
 \item[] Protecting personal information
 \item[] ``App'' means ``game''
 \end{itemize}
-
-\clearpage
-\section{Characters in \textit{Social Startup Game}}
-
-\newenvironment{character}[3]
-{
-\begin{tabular}{p{1.25in}p{4in}}
-\raisebox{-0.5\height}{\includegraphics[height=2in]{images/#1.png}} &
-\textbf{#1 #2}
-\begin{itemize*}
-#3
-\end{itemize*}
-}
-{
-\end{tabular}
-\bigskip
-}
-
-\begin{character}{Esteban}{Cortez}
-{\item Bachelors in Computer Science, Ball State University}
-Esteban worked in a factory until he was 33, then he went to college and decided to get involved in software development.
-\end{character}
-
-\begin{character}{Nancy}{Stevens}
-{\item Bachelors in English, Georgetown University
- \item Masters in Computer Security, Purdue University}
-Nancy has a popular podcast about being a woman in technology.
-\end{character}
-
-\begin{character}{Jerry}{Chen}
-{\item Bachelors in Computer Science, University of Hong Kong}
-Jerry interned at a local company in high school and has been working as a software developer ever since.
-\end{character}
-
-\begin{character}{Vani}{Mishra}
-{\item Bachelors in Computer Engineering, Indian Institute of Science
- \item Masters in Software Engineering, Ball State University}
-Vani was born in India and came to the United States for graduate school. She loves music, dancing, and PHP.
-\end{character}
-
-\begin{character}{Abdullah}{Nasr}
-{\item Bachelors in Electrical Engineering, Iowa State University}
-Abdullah used to work for a larger social media company, but he prefers the excitement of a small startup.
-\end{character}
-
-\begin{character}{Janine}{Palmer}
-{\item Bachelors in Computer Science, Virginia Tech}
-Janine is especially talented at meeting with customers and understanding what they want from a product.
-\end{character}
-
-\begin{character}{Melissa}{Barnard}
-{\item Bachelors in Mathematics, Stanford University}
-Melissa has always loved games and puzzles, but she especially loves bicycling and walking her German Shepherd.
-\end{character}
-
-\begin{character}{Ivar}{Johansen}
-{\item Bachelors in Chemistry, Stockholm University
- \item Masters in Electrical Engineering, Uppsala University}
-Ivar teaches kids how to build simple robots as a volunteer in a local school.
-\end{character}
-
-\begin{character}{Bruce}{Powers}
-{\item Bachelors in Computer Science, Ball State University}
-Bruce was recently married and enjoys going to the gym and watching documentaries about history.
-\end{character}
-
-\begin{tabular}{p{1.25in}p{4in}}
-\includegraphics[width=0.6in]{images/Frieda.png}
-&
-\textbf{Frieda}
-
-Frieda is the administrative coordinator at Social Jam.
-\end{tabular}
 
 \clearpage
 \section{Gameplay Logs}
