@@ -4,6 +4,7 @@
 \usepackage{multicol}
 \usepackage{fullpage}
 \usepackage{mdwlist}
+\usepackage{graphicx}
 
 \newcommand{\serc}{S$^2$ERC}
 
@@ -851,66 +852,77 @@ security: strong passwords
 \clearpage
 \section{Characters in \textit{Social Startup Game}}
 
-\newenvironment{character}[2]
+\newenvironment{character}[3]
 {
-\noindent\textbf{#1}
+\begin{tabular}{p{1.25in}p{4in}}
+\raisebox{-0.5\height}{\includegraphics[height=2in]{images/#1.png}} &
+\textbf{#1 #2}
 \begin{itemize*}
-#2
+#3
 \end{itemize*}
 }
 {
+\end{tabular}
 \bigskip
 }
 
-\begin{character}{Esteban Cortez}
+\begin{character}{Esteban}{Cortez}
 {\item Bachelors in Computer Science, Ball State University}
 Esteban worked in a factory until he was 33, then he went to college and decided to get involved in software development.
 \end{character}
 
-\begin{character}{Nancy Stevens}
+\begin{character}{Nancy}{Stevens}
 {\item Bachelors in English, Georgetown University
  \item Masters in Computer Security, Purdue University}
 Nancy has a popular podcast about being a woman in technology.
 \end{character}
 
-\begin{character}{Jerry Chen}
+\begin{character}{Jerry}{Chen}
 {\item Bachelors in Computer Science, University of Hong Kong}
 Jerry interned at a local company in high school and has been working as a software developer ever since.
 \end{character}
 
-\begin{character}{Vani Mishra}
+\begin{character}{Vani}{Mishra}
 {\item Bachelors in Computer Engineering, Indian Institute of Science
  \item Masters in Software Engineering, Ball State University}
 Vani was born in India and came to the United States for graduate school. She loves music, dancing, and PHP.
 \end{character}
 
-\begin{character}{Abdullah Nasr}
+\begin{character}{Abdullah}{Nasr}
 {\item Bachelors in Electrical Engineering, Iowa State University}
 Abdullah used to work for a larger social media company, but he prefers the excitement of a small startup.
 \end{character}
 
-\begin{character}{Janine Palmer}
+\begin{character}{Janine}{Palmer}
 {\item Bachelors in Computer Science, Virginia Tech}
 Janine is especially talented at meeting with customers and understanding what they want from a product.
 \end{character}
 
-\begin{character}{Melissa Barnard}
+\begin{character}{Melissa}{Barnard}
 {\item Bachelors in Mathematics, Stanford University}
 Melissa has always loved games and puzzles, but she especially loves bicycling and walking her German Shepherd.
 \end{character}
 
-\begin{character}{Ivar Johansen}
+\begin{character}{Ivar}{Johansen}
 {\item Bachelors in Chemistry, Stockholm University
  \item Masters in Electrical Engineering, Uppsala University}
 Ivar teaches kids how to build simple robots as a volunteer in a local school.
 \end{character}
 
-\begin{character}{Bruce Powers}
+\begin{character}{Bruce}{Powers}
 {\item Bachelors in Computer Science, Ball State University}
 Bruce was recently married and enjoys going to the gym and watching documentaries about history.
 \end{character}
 
+\begin{tabular}{p{1.25in}p{4in}}
+\includegraphics[width=0.6in]{images/Frieda.png}
+&
+\textbf{Frieda}
 
+Frieda is the administrative coordinator at Social Jam.
+\end{tabular}
+
+\clearpage
 \section{Gameplay Logs}
 \input{logs.tex}
 
