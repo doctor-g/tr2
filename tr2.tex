@@ -91,7 +91,139 @@ contextualizes these results within the overarching research framework.
 \section{Game Design}
 \label{sec:design}
 
-\textit{Kaleb will provide text here describing the game design}
+\subsection{Early Multiplayer Prototypes}
+
+Following the analysis presented in \citet{Gestwicki2015}, 
+we proceeded with a rapid prototyping process in order to identify
+an optimal design for our constraints.
+We focused on physical prototypes
+as we worked through the various cybersecurity epistemologies,
+matching concepts to appropriate game mechanisms.
+
+The MDA framework~\citep{Hunicke2004} was useful here, 
+as it separates the \textit{mechanics} (the elements that a designer
+controls) from the \textit{dynamics} (emergent gameplay properties of the
+mechanics). This is analogous to many security vulnerabilities, in which
+the system designer specifies the rules of a system (mechanics) and the
+attacker attempts to exploit unexpected combinations and applications
+of that system (dynamics).
+
+Also useful for cybersecurity game development is the observation
+that real-life security is a competitive, asynchronous, distributed,
+asymmetric game. That is, security is:
+\begin{description}
+\item[competitive] attackers versus defenders
+\item[asynchronous]  the two sides may take their actions at any time,
+ regardless of what the other is doing
+\item[distributed] the two teams are not collocated, although
+ allies may be
+\item[asymmetric] the two sides take different actions
+\end{description}
+These properties create an interesting and significant design challenge.
+Like all creative and scientific endeavors,  game design generally
+derives new ideas from previous ones, punctuated by occasional
+paradigmatic shifts and inventions. In our analysis, we found
+no games with these properties. The closest we encountered were
+digital capture-the-flag games, which are timeboxed and not strictly
+asynchronous.
+
+The \textit{White Hat / Black Hat} (WHBH) family of designs
+represent attempts to convey the competitive and asymmetric properties
+of cybersecurity to the player.
+The first of these designs featured an asymmetric design in which
+one player was the Black Hat and the other 2--4 players were 
+White Hats. White Hats needed to secure company assets, while the
+Black Hat simultaneously tried to capitalize on others' successes.
+The main tension 
+tension in this design came from the White Hat players desire
+to beat each other and outsmart the Black Hat, while the Black Hat
+player was able to hide exploits and sow mistrust.
+
+A new WHBH design emerged from this process, one that cast each player
+as both a White Hat and a Black Hat: each round of gameplay consisted
+of a White Hat phase in which players managed company assets, followed
+by a Black Hat phase in which players secretly sabotaged each other.
+More specifically, a White Hat hacker has to balance the business
+demands of their company against the need for confidentiality,
+integrity, and availability of their services, while a Black Hat
+hacker seeks to find exploits and has to balance the risk of discovery
+against the increased rewards that come with patience.  The main
+conflict in this game, then, came from managing the unknowns: is your
+system compromised? Will you be attacked? Will your opponent discover
+your virus before you can gain valuable data?
+
+Asymmetry was kept as a focus by having the White Hat and Black Hat
+phases play differently. The White Hat phase included fairly conventional
+resource management gameplay.
+The Black Hat phase involved mini-games---puzzles that represented,
+at an abstract level, authentic hacking activities.
+For example, a tile-rotation puzzle was designed to replicate
+finding a path through a system and the inherent delay between
+writing a program and verifying its execution.
+
+In parallel with the WHBH family of designs, we developed and evaluated 
+a playable prototype of an untitled multiplayer resource management game.
+This game also had players acting as both white hat and black hat hackers,
+but this game featured more explicit representation of four
+important values: confidentiality, integrity, availability, and profit.
+White hat players could either reinvest their profits directly in
+profit-making activity, or they could strengthen their defenses.
+During the black hat turn, players played secret attacks against 
+each other, requiring a third party (not one of the players) to maintain
+some of the game's secret state.
+Playtesting this prototype, we learned that 
+while the concepts of confidentiality, integrity, and availability
+resonate with security professionals who already understand what
+they represent, these terms---as abstractions---do not carry much meaning
+to those not in IT. 
+The game design treated these terms separately and authentically,
+each being a defense against a different kind of attack,
+but this was arbitrary to the players.
+
+\subsection{Genesis of a single-player simulation game}
+
+After approximately two months of rapid prototyping, we decided
+to abandon multiplayer designs and move to a simpler single-player
+design. The two authors had previously worked on a realtime
+multiplayer video 
+game\footnote{\url{http://about.collaborationstationgame.info}} and
+were wary about the complex production needs for such designs, especially
+given the amount of other design risk being encumbered.
+
+We were quickly able to take what we had learned from the rapid
+prototyping experience and transform this into the seed of a single-player
+simulation game.
+Although a single-player design lost some authenticity in representing
+the adversarial nature of cybersecurity, it also eliminated an underlying
+conundrum we had faced during prototyping: would potential audiences
+such as teachers, librarians, or parents 
+reject a game that forced a young
+player to simulate illegal (black hat) activities?
+
+Considering the importance of choosing metaphors familiar to the player---as
+opposed to terms like ``integrity'' that are abstruse to our target
+audience---we adopted a theme of social media.
+Informal polling showed that youth in our target demographic 
+were familiar with social media, particularly through popular brands
+such as Facebook and Instagram. 
+We also decided to keep the balance represented in our previous
+multiplayer designs, where security concerns are ``defensive'' moves
+that are necessary but not sufficient for victory.
+
+One of the drawbacks of our earlier, multiplayer designs was that they
+cast each player abstractly as both a person and a company, and this
+elided the fact that software development is cooperative activity.
+We were inspired by the cooperative game theory, which observes
+that software development is a cooperative game of invention
+and communication~\citep{Cockburn2006}.
+This led to our decision to frame the player as a security expert
+with a team of developers working under them.
+This theme allowed us to abstract away money as a directly manipulable
+resource and instead to focus on social media's fungible currency: users.
+
+\subsection{\textit{Social Startup Game}}
+
+
 
 \section{Evaluation}
 \label{sec:evaluation}
