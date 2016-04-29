@@ -325,7 +325,7 @@ For example, there is an entity that represents a feature, and that
 entity has a user-generating component. The user generation system
 looks at all active entities that have such components and updates
 the Social Jam user count based on this.
-\textit{Social Startup Game}'s entity system comprises 15~systems
+\textit{Social Startup Game}'s entity system comprises 17~systems
 and 25~components, the explanations for which are provided
 in Appendix~\ref{appendix:entity-system}.
 
@@ -1155,7 +1155,10 @@ Frieda is the administrative coordinator at Social Jam.
 \section{\textit{Social Startup Game} Entity System}
 \label{appendix:entity-system}
 
-\subsection*{Systems}
+\subsection*{Named Systems}
+
+These systems are named, top-level classes within the implementation.
+
 \begin{description}
 \item[EventTriggerSystem]
  Checks the registered events and triggers and event to occur if its registered time has passed
@@ -1171,6 +1174,21 @@ Frieda is the administrative coordinator at Social Jam.
 \item[UserAttritionSystem] Removes users per section per exploit equal to the product of the total company users and the exploit attrition value (0.0022)
 \item[UserGenerationSystem] Generates users per second equal to the sum of the user generation values of the completed features
 \item[WorkHoursSystem] Limits the work hours of employees to the common work day; accelerates time to twice as fast when not during normal work hours
+\end{description}
+
+\subsection*{Anonymous Systems}
+
+These systems are implemented as anonymous inner classes within the
+view layer of the application.  The enclosing class for each system is
+identified, and each is given a name here for the sake of clarity.
+
+\begin{description}
+\item[GameScreen::TimeUpdateSystem] Updates the current in-game time
+ as shown at the top of the screen
+\item[GameScreen:UserUpdateSystem] Updates the number of users as shown
+ at the top of the screen
+\item[ExploitsGroup::TableUpdateSystem] Updates the table of exploits 
+\item[FeatureGroup::TableUpdateSystem] Updates the table of features 
 \end{description}
 
 
