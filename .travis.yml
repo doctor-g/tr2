@@ -1,7 +1,6 @@
 before_install:
-- sudo apt-get update && sudo apt-get install texlive-latex-base texlive-latex-extra graphviz
+- sudo apt-get update && sudo apt-get install texlive-latex-base texlive-latex-extra
 script:
-- dot sys-dep.dot -Tpdf > sys-dep.pdf
 - pdflatex tr2.tex
 - bibtex tr2
 - pdflatex tr2.tex
