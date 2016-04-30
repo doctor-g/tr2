@@ -1,0 +1,48 @@
+digraph {
+rankdir="LR";
+nodesep=0.05; // decrease separation to reduce graph size
+{ rank = same
+developmentProgress,
+developmentSkill,
+employeeNumber,
+event,
+exploitNumber,
+featureNumber,
+goal,
+lostUsers,
+maintenanceProgress,
+maintenanceSkill,
+name,
+onComplete,
+onUpdate,
+owner,
+position,
+profile,
+secondsRemaining,
+sprite,
+task,
+taskFlags,
+timeTrigger,
+userAttrition,
+usersPerHour,
+usersPerHourState,
+vulnerability [ shape=rectangle ]};
+EventTriggerSystem -> { timeTrigger event };
+ExploitMaintenanceSystem -> {task maintenanceProgress maintenanceSkill};
+ExploitSystem -> {};
+ExposureReductionSystem -> { task maintenanceSkill };
+FeatureDevelopmentSystem ->  { task developmentProgress developmentSkill goal vulnerability};
+FeatureGenerationSystem -> { developmentProgress };
+GameTimeSystem -> {};
+GameTimeSystem -> { sprite position };
+LearningSystem -> {developmentSkill maintenanceSkill};
+TaskProgressSystem -> {secondsRemaining onComplete};
+UpdatingSystem -> onUpdate;
+UserAttritionSystem -> { userAttrition };
+UserGenerationSystem -> { usersPerHour usersPerHourState };
+WorkHoursSystem -> task;
+"ExpoitsGroup::TableUpdateSystem" -> { exploitNumber name };
+"FeatureGroup::TableUpdateSystem" -> { featureNumber name };
+"GameScreen::TimeUpdateSystem" -> {};
+"GameScreen::UserUpdateSystem" -> {};
+}

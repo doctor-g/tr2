@@ -317,7 +317,7 @@ object-oriented design, an entity system, and functional-reactive
 programming.
 Most of the simulation is implemented within the entity system,
 which is a style of game engine architecture that offers many benefits over
-standard OO conventions~\citep{Gestwicki2012}. The entity system
+standard OO conventions~\citep{Gestwicki2012,Nystrom2014}. The entity system
 approach divides the software into \textit{entities} that
 aggregate \textit{components}, and \textit{systems} that process 
 specific kinds of components.
@@ -325,9 +325,17 @@ For example, there is an entity that represents a feature, and that
 entity has a user-generating component. The user generation system
 looks at all active entities that have such components and updates
 the Social Jam user count based on this.
-\textit{Social Startup Game}'s entity system comprises 17~systems
-and 25~components, the explanations for which are provided
+Figure~\ref{fig:sys-dep} displays the 17~systems
+and 25~components that constitute \textit{Social Startup Game}'s
+entity system, and further descriptions of the systems can be found
 in Appendix~\ref{appendix:entity-system}.
+
+\begin{figure}
+\centering
+\includegraphics[height=8in]{sys-dep.pdf}
+\caption{Systems and components of the entity system architecture, rendered as ovals and rectangles, respectively. Arrows indicate dependencies}
+\label{fig:sys-dep}
+\end{figure}
 
 All of the programming and design were done by Paul Gestwicki and
 Kaleb Stumbaugh, and all of the artwork was created by Coy Yuan.  The
