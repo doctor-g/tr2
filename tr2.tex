@@ -120,6 +120,15 @@ qualitative evaluation protocol and results, and Section~\ref{sec:discussion}
 contextualizes these results within the overarching research framework.
 
 
+\begin{figure}
+\begin{framed}
+\centering
+\includegraphics[width=3in]{images/logo.png}
+\caption{\textit{Social Startup Game} logo}
+\label{fig:logo}
+\end{framed}
+\end{figure}
+
 \section{Game Design}
 \label{sec:design}
 
@@ -167,7 +176,7 @@ one player was the Black Hat and the other 2--4 players were
 White Hats. White Hats needed to secure company assets, while the
 Black Hat simultaneously tried to capitalize on others' successes.
 The main tension 
-tension in this design came from the White Hat players desire
+in this design came from the White Hat players desire
 to beat each other and outsmart the Black Hat, while the Black Hat
 player was able to hide exploits and sow mistrust.
 
@@ -191,7 +200,17 @@ The Black Hat phase involved mini-games---puzzles that represented,
 at an abstract level, authentic hacking activities.
 For example, a tile-rotation puzzle was designed to replicate
 finding a path through a system and the inherent delay between
-writing a program and verifying its execution.
+writing a program and verifying its execution (see Figure~\ref{fig:rotation}).
+%
+\begin{figure}\centering
+\begin{framed}
+\includegraphics[width=3in]{images/rotation.png}
+\caption{An example of a tile rotation mini-game. A player
+may queue rotation commands for specific tiles and then execute them;
+success is achieved by ending up with a single unbroken line.}
+\label{fig:rotation}
+\end{framed}
+\end{figure}
 
 In parallel with the WHBH family of designs, we developed and evaluated 
 a playable prototype of an untitled multiplayer resource management game.
@@ -259,6 +278,15 @@ resource and instead to focus on social media's fungible currency: users.
 in which the player is cast as the chief security advisor for
 an up-and-coming social media startup, Social 
 Jam;
+%
+\begin{figure}\centering
+\begin{framed}
+\includegraphics[width=3in]{images/company_logo.png}
+\caption{Social Jam company logo}
+\label{fig:social-jam}
+\end{framed}
+\end{figure}
+%
 a list of the game's key concepts is provided in
 Appendix~\ref{appendix:key-concepts}.
 The player manages three employees over ten days and is given two 
@@ -273,12 +301,73 @@ exposure, the higher the chance of an exploit. The Maintenance task
 is necessary for both fixing exploits and reducing exposure.
 
 There are nine
-main characters (listed in Appendix~\ref{appendix:characters}), and at
-the start of the game, one is randomly chosen to be CEO, and three
-more for your three employees.
-Embedded into the simulation game are the eight narrative events
-listed in Figure~\ref{fig:event-list}; these events serve as
-important decision points for contextualizing educational content.
+main characters as shown in Figure~\ref{fig:cast}, 
+%
+\begin{figure}\centering
+\begin{framed}
+\includegraphics[width=5in]{images/cast.png}
+\caption{The cast of \textit{Social Startup Game}}
+\label{fig:cast}
+\end{framed}
+\end{figure}
+%
+and at the start of the game, one is randomly chosen to be CEO, and
+three more for your three employees.  
+The main interface shows employee names, skills, and tasks.
+By tapping on a character, a player can also read about their background,
+interests, and credentials, as seen in Figure~\ref{fig:bio};
+%
+\begin{figure}\centering
+\begin{framed}
+\includegraphics[width=2in]{images/screen-start.png}
+\includegraphics[width=2in]{images/screen-bio-open.png}
+\caption{On the left, the screen at the start of the game.
+ On the right, the screen after tapping on Vani to see her
+ biosketch.}
+\label{fig:bio}
+\end{framed}
+\end{figure}
+%
+a complete list of character bios and credentials is provided in 
+Appendix~\ref{appendix:characters}.
+
+The buttons at the bottom of the screen are used to change between
+four different views. The first---selected by default---is the
+status view, which shows the users generated per hour,
+days remaining in the game, estimated exposure, 
+and current progress toward goal. The sparkline chart fills as time elapses
+to show the player's performance, as shown in Figure~\ref{fig:chart}.
+%
+\begin{figure}\centering
+\begin{framed}
+\includegraphics[width=2in]{images/graph-plain.png}
+\includegraphics[width=2in]{images/graph-moderate.png}
+\includegraphics[width=2in]{images/graph-poor.png}
+\caption{Three sample user sparkline charts, showing 
+ ideal play, moderate play, and poor play outcomes}
+\label{fig:chart}
+\end{framed}
+\end{figure}
+%
+The feature view shows the currently completed features, the number
+of users they generate, and the progress toward completing the
+next feature; similarly, the exploits view shows the currently-identified
+exploits, how many users are leaving because of them, and their progress
+toward completion. 
+\begin{figure}\centering
+\begin{framed}
+\includegraphics[width=2in]{images/features.png}
+\includegraphics[width=2in]{images/exploits.png}
+\caption{The features and exploits views}
+\label{fig:features-and-exploits}
+\end{framed}
+\end{figure}
+
+The fourth view---alerts---is used for interactive narrative events.
+Embedded into the simulation
+game are the eight narrative events summarized in
+Figure~\ref{fig:event-list}; these events serve as important decision
+points for contextualizing educational content.
 %
 \begin{figure}
 \begin{framed}
@@ -313,6 +402,12 @@ At the end of ten in-game days, the player is given feedback from
 the Social Jam CEO about their performance. This feedback varies
 depending on how well the player met the two different goals, the best
 feedback of course being reserved for those who met both.
+
+The visual design of the game is based on informal interviews with
+prospective players in the target demographic. Our artist prepared
+five different character styles as well as a collection of sketches
+for this purpose; the interviewees overwhelmingly preferred this
+style.
 
 \subsection{Technical Details}
 
