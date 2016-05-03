@@ -325,22 +325,44 @@ For example, there is an entity that represents a feature, and that
 entity has a user-generating component. The user generation system
 looks at all active entities that have such components and updates
 the Social Jam user count based on this.
-Figure~\ref{fig:sys-dep} displays the 17~systems
-and 25~components that constitute \textit{Social Startup Game}'s
-entity system, and further descriptions of the systems can be found
-in Appendix~\ref{appendix:entity-system}.
 
+Figure~\ref{fig:sys-dep} displays the 17~systems and 25~components
+that constitute \textit{Social Startup Game}'s entity system, and it
+reveals the hybrid nature of our software architecture.
+%
 \begin{figure}
 \centering
 \includegraphics[height=8in]{sys-dep.pdf}
 \caption{Systems and components of the entity system architecture, rendered as ovals and rectangles, respectively. Arrows indicate dependencies}
 \label{fig:sys-dep}
 \end{figure}
+%
+Briefly, the
+\textit{systems} are subclasses of TriplePlay's \texttt{System} class,
+and they operate over any entity that has a specified
+\textit{component}, which is primitive data or a simple struct-type
+data structure.  Most systems depend on a subset of the components:
+for example, \texttt{LearningSystem} updates the
+\texttt{developmentSkill} and \texttt{maintenanceSkill} of employee
+entities, increasing the skills that the employees are engaged
+with.\footnote{Further descriptions of the systems can be found in
+  Appendix~\ref{appendix:entity-system}.}  As for the systems that
+depend on no components, they are operating directly on global game
+state, such as \texttt{TimeUpdateSystem}, which modifies the amount of
+in-game time elapsed---a field on an essentially-global
+\texttt{GameWorld} instance.
+There are components on which no system depends, and these are handled
+by non-system code; this is mostly in the user-interface, which primarily
+follows object-oriented design principles instead of the entity
+system architecture.
 
 All of the programming and design were done by Paul Gestwicki and
-Kaleb Stumbaugh, and all of the artwork was created by Coy Yuan.  The
-music is by Kevin MacLeod (\url{incompetech.com}) and licensed under a
-Creative Commons license (CC-BY-3.0).
+Kaleb Stumbaugh, and all of the artwork was created by Coy Yuan.  
+The game itself is licensed under the GNU General Public License
+version 3.
+The
+music is by Kevin MacLeod (\url{incompetech.com}) and is used under the
+Creative Commons Attribution 3.0 (CC BY 3.0).
 
 
 \section{Evaluation}
