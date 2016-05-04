@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{framed}
 \usepackage{listings}
+\usepackage{microtype}
 
 \newcommand{\serc}{S$^2$ERC}
 
@@ -169,10 +170,9 @@ of characteristics except for the genre of capture-the-flag already
 used to teach computer security. Even these games are not fully asynchronous
 since events and tournaments are scheduled and timeboxed.
 
-The \textit{White Hat / Black Hat} (WHBH) family of designs
-represent attempts to convey the competitive and asymmetric properties
-of cybersecurity to the player.
-The first of these designs featured an asymmetric design in which
+We pursued a series of designed based on the asymmetric competition of 
+``white hat'' and ``black hat'' hackers.
+The first of these designs featured a purely asymmetric design in which
 one player was the Black Hat and the other 2--4 players were 
 White Hats. White Hats needed to secure company assets, while the
 Black Hat simultaneously tried to capitalize on others' successes.
@@ -180,20 +180,20 @@ The main tension
 in this design came from the White Hat players desire
 to beat each other and outsmart the Black Hat, while the Black Hat
 player was able to hide exploits and sow mistrust.
-
-A new WHBH design emerged from this process, one that cast each player
+%
+A second design emerged from this process, one that cast each player
 as both a White Hat and a Black Hat: each round of gameplay consisted
 of a White Hat phase in which players managed company assets, followed
 by a Black Hat phase in which players secretly sabotaged each other.
-More specifically, a White Hat hacker has to balance the business
+More specifically, a White Hat hacker had to balance the business
 demands of their company against the need for confidentiality,
 integrity, and availability of their services, while a Black Hat
-hacker seeks to find exploits and has to balance the risk of discovery
-against the increased rewards that come with patience.  The main
-conflict in this game, then, came from managing the unknowns: is your
+hacker sought to find exploits, balancing risk of discovery
+against ever-increasing rewards.  The main
+conflict in this design, then, came from managing the unknowns: is your
 system compromised? Will you be attacked? Will your opponent discover
 your virus before you can gain valuable data?
-
+%
 Asymmetry was kept as a focus by having the White Hat and Black Hat
 phases play differently. The White Hat phase included fairly conventional
 resource management gameplay.
@@ -213,9 +213,11 @@ success is achieved by ending up with a single unbroken line.}
 \end{framed}
 \end{figure}
 
-In parallel with the WHBH family of designs, we developed and evaluated 
-a playable prototype of an untitled multiplayer resource management game.
-This game also had players acting as both white hat and black hat hackers,
+In parallel with the aforementioned designs, we also developed and
+playtested a paper prototype of an untitled
+multiplayer resource management game.
+Similar to the one described above, 
+this game also had players acting as both white hat and black hat hackers,
 but this game featured more explicit representation of four
 important values: confidentiality, integrity, availability, and profit.
 White hat players could either reinvest their profits directly in
@@ -227,30 +229,39 @@ Playtesting this prototype, we learned that
 while the concepts of confidentiality, integrity, and availability
 resonate with security professionals who already understand what
 they represent, these terms---as abstractions---do not carry much meaning
-to those not in IT. 
-The game design treated these terms separately and authentically,
+to those outside the field.
+The game design featured authentic treatment of these terms,
 each being a defense against a different kind of attack,
-but this was arbitrary to the players.
+but this was arbitrary to the players: they could not see the metaphorical
+connection, and so they walked away without any viable 
+declarative or operational knowledge of these concepts beyond their
+gameplay manifestations.
+Furthermore, the playtesters were traditional college-age students,
+and so we realized that this approach would be untenable for
+younger players.
 
-\subsection{Genesis of a single-player simulation game}
+\subsection{Genesis of a One-Player Simulation Game}
 
 After approximately two months of rapid prototyping, we decided
 to abandon multiplayer designs and move to a simpler single-player
-design. The two authors had previously worked on a realtime
+design. We had recently completed work on a realtime
 multiplayer video 
-game\footnote{\url{http://collaborationstationgame.info}} and
-were wary about the complex production needs for such designs, especially
-given the amount of other design risk being encumbered.
-
-We were quickly able to take what we had learned from the rapid
-prototyping experience and transform this into the seed of a single-player
-simulation game.
-Although a single-player design lost some authenticity in representing
-the adversarial nature of cybersecurity, it also eliminated an underlying
-conundrum we had faced during prototyping: would potential audiences
+game---\textit{Collaboration Station}, a game about the life on the
+International Space Station.\footnote{\url{http://collaborationstationgame.info}}
+Knowing the technical challenges and production costs required
+for such designs, we decided to allocate more attention to single-player
+game experiences. The short history of digital games has been
+dominated by single-player games, and this gave us a broad range of
+related work to draw from. Unfortunately, it also meant abandoning
+principles of competitive asymmetric play explored in some of our
+prototypes.
+However, this also eliminated a design problem that we uncovered
+in our multiplayer asymmetric designs: would potential audiences
 such as teachers, librarians, or parents 
 reject a game that forced a young
-player to simulate illegal (black hat) activities?
+player to simulate illegal, ``black hat'' activities? 
+Our consequent single player designs
+took a strictly ``white hat'' perspective.
 
 Considering the importance of choosing metaphors familiar to the player---as
 opposed to terms like ``integrity'' that are abstruse to our target
@@ -260,7 +271,7 @@ were familiar with social media, particularly through popular brands
 such as Facebook and Instagram. 
 We also decided to keep the balance represented in our previous
 multiplayer designs, where security concerns are ``defensive'' moves
-that are necessary but not sufficient for victory.
+necessary but not sufficient for victory.
 
 One of the drawbacks of our earlier, multiplayer designs was that they
 cast each player abstractly as both a person and a company, and this
@@ -272,13 +283,15 @@ This led to our decision to frame the player as a security expert
 with a team of developers working under them.
 This theme allowed us to abstract away money as a directly manipulable
 resource and instead to focus on social media's fungible currency: users.
+This line of investigation led to the game
+we focus on for the rest of this report: \textit{Social Startup Game}.
 
 \subsection{\textit{Social Startup Game}}
 
 \textit{Social Startup Game} is a single-player simulation game
 in which the player is cast as the chief security advisor for
 an up-and-coming social media startup, Social 
-Jam;
+Jam.
 %
 \begin{figure}\centering
 \begin{framed}
@@ -288,21 +301,24 @@ Jam;
 \end{framed}
 \end{figure}
 %
-a list of the game's key concepts is provided in
-Appendix~\ref{appendix:key-concepts}.
+We describe the fundamental gameplay below, and the reader can refer to 
+Appendix~\ref{appendix:key-concepts} for definitions of the 
+game's key concepts.
+
 The player manages three employees over ten days and is given two 
 competing goals: first, to increase the number of Social Jam users
 to 20,000, and second, to keep the estimated exposure (security risk)
 of the company at less than 15\%.
-The player does this by assigning employees to either the Development
-task or Maintenance task. Development contributes to the completion of
-features, which earn new users but also increase exposure.
+The player does this by assigning employees to either Development
+or Maintenance. Development contributes to the completion of
+features, which earn new users but also increase exposure:
 Social Jam is constantly under threat by hackers, and the higher the
-exposure, the higher the chance of an exploit. The Maintenance task
-is necessary for both fixing exploits and reducing exposure.
+exposure, the higher the chance of an exploit. Maintenance 
+is used both for fixing exploits and reducing exposure.
 
-There are nine
-main characters as shown in Figure~\ref{fig:cast}, 
+
+Figure~\ref{fig:cast} shows the nine main characters of
+\textit{Social Startup Game}.
 %
 \begin{figure}\centering
 \begin{framed}
@@ -312,11 +328,11 @@ main characters as shown in Figure~\ref{fig:cast},
 \end{framed}
 \end{figure}
 %
-and at the start of the game, one is randomly chosen to be CEO, and
-three more for your three employees.  
+At the start of the game, one is randomly chosen to be CEO, and
+three more are assigned as your employees.  
 The main interface shows employee names, skills, and tasks.
 By tapping on a character, a player can also read about their background,
-interests, and credentials, as seen in Figure~\ref{fig:bio};
+interests, and credentials, as seen in Figure~\ref{fig:bio}.
 %
 \begin{figure}\centering
 \begin{framed}
@@ -329,7 +345,7 @@ interests, and credentials, as seen in Figure~\ref{fig:bio};
 \end{framed}
 \end{figure}
 %
-a complete list of character bios and credentials is provided in 
+A complete list of character bios and credentials is provided in 
 Appendix~\ref{appendix:characters}.
 
 The buttons at the bottom of the screen are used to change between
@@ -413,17 +429,6 @@ The introductory event explains the game's interface and always occurs
 as soon as the game starts; the others occur in a random order during
 gameplay.
 
-At the end of ten in-game days, the player is given feedback from
-the Social Jam CEO about their performance. This feedback varies
-depending on how well the player met the two different goals, the best
-feedback of course being reserved for those who met both.
-
-The visual design of the game is based on informal interviews with
-prospective players in the target demographic. Our artist prepared
-five different character styles as well as a collection of sketches
-for this purpose; the interviewees overwhelmingly preferred this
-style.
-
 \subsection{Technical Details}
 
 \textit{Social Startup Game} is an HTML5 game that runs
@@ -498,11 +503,16 @@ system architecture.
 
 All of the programming and design were done by Paul Gestwicki and
 Kaleb Stumbaugh, and all of the artwork was created by Coy Yuan.  
-The game itself is licensed under the GNU General Public License
+The game software is licensed under the GNU General Public License
 version 3.
-The
-music is by Kevin MacLeod (\url{incompetech.com}) and is used under the
+The music is by Kevin MacLeod (\url{incompetech.com}) and is used under the
 Creative Commons Attribution 3.0 (CC BY 3.0).
+%
+The visual design of the game is based on informal interviews with
+prospective players in the target demographic. Our artist prepared
+five different character styles as well as a collection of sketches
+for this purpose; the interviewees overwhelmingly preferred this
+style.
 
 
 \section{Evaluation}
@@ -1592,6 +1602,10 @@ indicates a pause, such as when playing the game.
 
 
 \end{document}
+
+
+
+
 
 
 
