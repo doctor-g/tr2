@@ -11,9 +11,9 @@
 
 \newcommand{\serc}{S$^2$ERC}
 
-\title{Design and evaluation of \textit{Social Startup Game}\\
+\title{Design and Evaluation of a Cybersecurity Education Game\\
 \medskip
-\serc{} Technical Report \textbf{NNN}\\
+\serc{} Technical Report 318\\
 }
 
 \author{Paul Gestwicki and Kaleb Stumbaugh\\
@@ -486,12 +486,13 @@ Briefly, the
 \textit{systems} are subclasses of TriplePlay's \texttt{System} class,
 and they operate over any entity that has a specified
 \textit{component}, which is primitive data or a simple struct-type
-data structure.  Most systems depend on a subset of the components:
-for example, \texttt{LearningSystem} updates the
-\texttt{developmentSkill} and \texttt{maintenanceSkill} of employee
-entities, increasing the skills that the employees are engaged
-with.\footnote{Further descriptions of the systems can be found in
-  Appendix~\ref{appendix:entity-system}.}  As for the systems that
+data structure.  Most systems depend on a small subset of the components,
+and summaries of each system are provided in
+Appendix~\ref{appendix:entity-system}.  
+For example, \texttt{LearningSystem} updates the
+\texttt{developmentSkill} or \texttt{maintenanceSkill} of employee
+entities depending on their assigned task.
+As for the systems that
 depend on no components, they are operating directly on global game
 state, such as \texttt{TimeUpdateSystem}, which modifies the amount of
 in-game time elapsed---a field on an essentially-global
@@ -1247,9 +1248,11 @@ guide.
 
 Despite these challenges, our rapid prototyping process identified
 several possible mappings from cybersecurity concepts to learning game
-mechanisms.  A limited production budget and schedule contributed
-significantly to the selection of ideas that constitute \textit{Social
-  Startup Game}.  Future work should more rigorously explore the
+mechanisms.  
+\textit{Social Startup Game} is a single-player simulation game
+with embedded narrative events, but this is only one of several
+design possibilities to meet our goals.
+Future work should more rigorously explore the
 asynchronous, asymmetric, multiplayer mechanisms that were out of
 scope for this project, since these properties are integral to
 computer security---we suspect they represent the best effort to
@@ -1261,7 +1264,8 @@ discussed earlier, our research design incorporates a constructivist
 perspective; we believe there may be value in moving to a more
 situated one (see, for example, \citet{Greeno1998, Hickey2003}).
 
-Regarding the second design goal, our evaluation has served to 
+Regarding the goal to expose players to career and educational paths,
+our evaluation has served to 
 confirm the value of early computing interventions toward positive
 outlook of youth toward computing careers.
 Our subjects recognized the economic viability of computing careers.
@@ -1272,9 +1276,28 @@ Taking \textit{Social Startup Game} as a pilot project, future work
 could look more carefully at how both aesthetic and formal properties
 of in-game characters can change perspectives of players toward
 real-life software developers and IT careers.
-Our findings present a snapshot, a local theory on how youth perceive
+Our findings present a snapshot---a local theory on how youth perceive
 software development careers, and future work can compare this to 
 other times, places, and contexts.
+
+Future work should explore more carefully the relationship that
+background knowledge and experience has on the efficacy of 
+educational games. This manifested in various ways in the evaluation
+of \textit{Social Startup Game}, the two most prominent being:
+players with any background with programming or relationship to 
+software developers self-evaluated as being  capable of pursuing
+such a career; and using a conventional branching narrative structure
+led to confusion---or worse, learning the wrong outcome---to a 12-year-old
+subject who had some prior experience with encryption technology.
+\citet{Bartle2009} points out that there is relatively little theory
+in game design, relying more on craft and anecdote, and that theory
+which does exist is often misunderstood and misrepresented.
+In educational game design, we can draw upon established educational
+theory such as constructivism~\citep{Duffy1996},
+constructionism~\citep{Papert1991},
+and situated learning~\citep{Wenger1999},
+but more work is required to determine where these align or
+conflict with nascent game design theory.
 
 This work validates our hypothesis that a Type~3 cybersecurity
 education game would be useful for addressing our design
